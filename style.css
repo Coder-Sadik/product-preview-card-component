@@ -22,17 +22,20 @@ body {
 	padding: 0;
 	font-family: "Montserrat", sans-serif;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+    align-items: center;
 	min-height: 100vh;
 	background-color: var(--Cream);
+    overflow-x: hidden;
 }
 
 .content {
 	max-width: 800px;
+    height: max-content;
 	border-radius: 15px;
 	display: flex;
 	background-color: white;
+    margin: 40px;
 }
 
 .photo img {
@@ -40,9 +43,11 @@ body {
 	width: 400px;
 	display: block;
 }
-
+.photo .mobile-img {
+	display: none;
+}
 .details {
-	padding: 40px;
+	padding: 35px;
 }
 
 .category p {
@@ -50,6 +55,7 @@ body {
 	letter-spacing: 4px;
 	text-transform: uppercase;
 	color: var(--Dark-grayish-blue);
+    margin-top: 0px;
 }
 
 .title h1 {
@@ -105,3 +111,33 @@ body {
 	cursor: pointer;
 }
 
+@media (max-width: 750px) {
+	.content {
+		flex-direction: column;
+		max-width: 460px;
+		margin: 30px;
+	}
+	.photo .desktop-img {
+		display: none;
+	}
+	.photo .mobile-img {
+		display: block;
+	}
+	.photo img {
+		width: 100%;
+		border-radius: 15px 15px 0px 0px;
+	}
+    .details{
+        padding: 30px;
+    }
+    .category p{
+        font-size: 14px;
+    }
+    .title h1, .price .current-price{
+        font-size: 24px;
+        margin: 0px;
+    }
+    article{
+        text-align: justify;
+    }
+}
